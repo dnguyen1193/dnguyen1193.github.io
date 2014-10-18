@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- TO DO:
+	Retrieve current location and send current location to Ming's datastore
+	Retrieve/display locations of characters and locations of students in the class
+		Last 100 entry, including my own
+	Distance (in miles) between me and each student needs to be displayed (below the map or as an overlay on the map)
+
+	REQUIREMENTS
+	- At least 1 CSS file (named whatever) - CHECK
+	- navigator.geolocation object must be used to retrieve my geolocation info
+	- Display my location on map with a unique marker (image of choice)
+	- Display info window after retrieving information from navigator.geolocation
+	- Display locations of students on map (no unique map marker needed)
+		- Display info window showing (name, latitude, longitude, timestamp)
+	- Display location of characters w/ respective icon as the marker
+		- Display info window showing (name, latitude, longitude, note)
+		- Download each character's icon image
+	- Display polyline(s) between me and each character on map
+	- Display distance (in miles) between me and characters
+		- SORTED.
+
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>I Solemnly Swear...</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script src="http://maps.google.com/maps/api/js?sensor=true"
+				type="text/javascript"></script>
+		<script>
+			var currLat = 0;
+			var	currLng = 0;
+			function initialize() { 
+				console.log(currLng);
+				console.log(currLat);
+				getCurrentLocation();
+
+				var mapOptions = {
+					center: {lat: currLat, lng: currLng}, //get current location?
+					zoom: 15
+				};
+				var map = new google.maps.Map(document.getElementById("map_canvas"),
+							mapOptions);
+			}
+
+			function getCurrentLocation() {
+				console.log("getCurr");
+				if (navigator.geolocation) {
+					console.log("getCurr:if");
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					alert("Gelocation is not supported by this browser.");
+				}
+			}
+
+			function showPosition(position) {
+				console.log("showPos");
+				currLat = position.coords.latitude;
+				currLat = position.coords.longitude;
+				console.log(currLat);
+				console.log(currLng);
+			}
+
+		</script>
+
+	<body onload="initialize()">
+		<div id="map_canvas"></div>
+	</body>
+
+
+</html>
