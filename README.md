@@ -1,3 +1,6 @@
+Page was original used for a COMP20 homepage assignment. It's now under construction and in the process of becoming a homepage!
+
+/ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
 Assignment 1: Your Portfolio
 
 Includes:
