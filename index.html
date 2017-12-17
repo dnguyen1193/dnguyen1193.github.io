@@ -7,6 +7,7 @@
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="  sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
 
     <!--  scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,35 +17,35 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#landing-screen">Home<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#about-me">About Me</a>
-                    <a class="nav-item nav-link" href="#projects">Projects</a>
-                    <a class="nav-item nav-link" href="#contact">Contact Me</a>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#landing-screen">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#about-me">About Me</a>
+                <a class="nav-item nav-link" href="#projects">Projects</a>
+                <a class="nav-item nav-link" href="#contact">Contact Me</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div id="landing-screen" class="row">
+    <div class="container-fluid">
+        <div class="section" id="landing-screen" class="row">
             <h1>Landing Screen</h1>
         </div>
 
-        <div id="about-me" class="row">
+        <div class="section" id="about-me" class="row">
             <h1>About Me</h1>
         </div>
 
-        <div id="projects" class="row">
+        <div class="section" id="projects" class="row">
             <h1>Projects</h1>
         </div>
 
-        <div id="contact" class="row">
+        <div class="section" id="contact" class="row">
             <h1>Contact Me</h1>
         </div>
     </div>
