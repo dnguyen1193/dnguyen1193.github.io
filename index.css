@@ -1,43 +1,8 @@
-body {
-	background-color: #330066;
-	border-style:double;
-	border-color: #FFFFFF;
-	border-width: 5pt;
-	text-align: center;
-}
-
-h2 {
-	color: #FFFFFF;
-	font-family: Impact, Charcoal, sans-serif;
-	font-size: 45pt;
-}
-
-a:link{
-	text-decoration: none;
-	color:#FFFFFF;
-	font-family: 'Trebuchet MS';
-	font-size: 15pt;
-}
-
-a:visited{
-	text-decoration: none;
-	color:#FFFFFF;
-	font-family: 'Trebuchet MS';
-	font-size: 15pt;
-}
-
-a:hover{
-	color:#FFFFFF;
-	font-family: 'Trebuchet MS';
-	font-size: 15pt;
-}
-
-a:active{
-	color:#FFFFFF;
-	font-family: 'Trebuchet MS';
-	font-size: 15pt;
-}
-
-p{
-	color:#FFFFFF;
+/* hidden span to ensure fixed navbar does not cover text,
+   found from https://pixelflips.com/blog/anchor-links-with-a-fixed-header */
+.anchor {
+	display: block;
+	height: 56px; /* same height as header */
+	margin-top: -56px; /* same height as header */
+	visibility: hidden;
 }
