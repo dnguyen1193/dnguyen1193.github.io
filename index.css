@@ -8,5 +8,9 @@
 }
 
 #landing-screen-text {
-	height: 400px;
+	height: 200px;
+}
+
+section {
+	margin-bottom: 200px;
 }
