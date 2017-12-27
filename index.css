@@ -6,3 +6,7 @@
 	margin-top: -56px; /* same height as header */
 	visibility: hidden;
 }
+
+#landing-screen-text {
+	height: 400px;
+}
