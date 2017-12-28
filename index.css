@@ -1,3 +1,8 @@
+.nav-link:hover .nav-text, .nav-link:focus .nav-text {
+	padding-bottom: 3px;
+	border-bottom: 2px solid rgba(0,0,0,.5);
+}
+
 /* hidden span to ensure fixed navbar does not cover text,
    found from https://pixelflips.com/blog/anchor-links-with-a-fixed-header */
 .anchor {
