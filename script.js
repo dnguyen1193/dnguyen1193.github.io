@@ -5,13 +5,17 @@ var onScroll = function() {
     navItems.each(function() {
         var currItem = $(this);
         var refElement = $(currItem.attr('href'));
+
         if (!refElement.length) { return; }
-        if (refElement.position().top <= scrollPos &&
-            refElement.position().top + refElement.parent().height() > scrollPos) {
+        if ((scrollPos <= refElement.position().top) &&
+            (refElement.position().top + refElement.parent().height() <= scrollPos + window.innerHeight)) {
+            // removing everything ensure you'll never have two menu items with active state, only one
             $('.navbar-nav a').removeClass('active');
             currItem.addClass('active');
+        } else {
+            currItem.removeClass('active');
         }
-    })
+    });
 
 
 
