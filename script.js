@@ -1,5 +1,7 @@
 var onScroll = function() {
-    var scrollPos = $(document).scrollTop() + $('.navbar').height();
+    var navbarHeight = $('.navbar').height();
+    var scrollPosTop = $(document).scrollTop() + navbarHeight;
+    var scrollPosEnd = scrollPosTop + window.innerHeight;
     var navItems = $('.navbar-nav').find('a');
 
     navItems.each(function() {
@@ -8,10 +10,17 @@ var onScroll = function() {
 
         if (!refElement.length) { return; }
 
-        if (((scrollPos <= refElement.position().top) &&
-                    ((refElement.position().top + refElement.parent().height() * 0.75) <= scrollPos + window.innerHeight))
-            || ((refElement.position().top <= scrollPos) && (refElement.position().top + refElement.parent().height() <= scrollPos + window.innerHeight))) {
-            // removing everything ensure you'll never have two menu items with active state, only one
+        var refElementPosTop = refElement.position().top;
+        var refElementHeight = refElement.parent().height();
+        var refElementPosBottom = refElementPosTop + refElementHeight;
+        // minimum amount of the section that needs to be displayed for a
+        // navbar to be considered "active"
+        var refElementMin = refElementPosTop + refElementHeight * 0.75;
+
+        if ((scrollPosTop > navbarHeight && scrollPosTop <= refElementPosTop
+             && refElementMin <= scrollPosEnd) ||
+            (refElementPosTop <= scrollPosTop
+                && refElementPosBottom <= scrollPosEnd)) {
             $('.navbar-nav a').removeClass('active');
             currItem.addClass('active');
         } else {
