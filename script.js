@@ -1,7 +1,7 @@
 var onScroll = function() {
     var navbarHeight = $('.navbar').height();
     var scrollPosTop = $(document).scrollTop() + navbarHeight;
-    var scrollPosEnd = scrollPosTop + window.innerHeight;
+    var scrollPosMid = scrollPosTop + window.innerHeight * 0.5;
     var navItems = $('.navbar-nav').find('a');
 
     navItems.each(function() {
@@ -11,16 +11,9 @@ var onScroll = function() {
         if (!refElement.length) { return; }
 
         var refElementPosTop = refElement.position().top;
-        var refElementHeight = refElement.parent().height();
-        var refElementPosBottom = refElementPosTop + refElementHeight;
-        // minimum amount of the section that needs to be displayed for a
-        // navbar to be considered "active"
-        var refElementMin = refElementPosTop + refElementHeight * 0.75;
 
-        if ((scrollPosTop > navbarHeight && scrollPosTop <= refElementPosTop
-             && refElementMin <= scrollPosEnd) ||
-            (refElementPosTop <= scrollPosTop
-                && refElementPosBottom <= scrollPosEnd)) {
+        if (scrollPosTop > navbarHeight && scrollPosTop <= refElementPosTop
+            && refElementPosTop <= scrollPosMid) {
             $('.navbar-nav a').removeClass('active');
             currItem.addClass('active');
         } else {
@@ -31,4 +24,9 @@ var onScroll = function() {
 
 $(document).ready(function() {
     $(document).on('scroll', onScroll);
+    var navItems = $('.navbar-nav').find('a');
+    navItems.on('click', function(e) {
+        var href = $(this).attr('href');
+        console.log(href);
+    });
 });
