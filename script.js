@@ -7,8 +7,10 @@ var onScroll = function() {
         var refElement = $(currItem.attr('href'));
 
         if (!refElement.length) { return; }
-        if ((scrollPos <= refElement.position().top) &&
-            (refElement.position().top + refElement.parent().height() <= scrollPos + window.innerHeight)) {
+
+        if (((scrollPos <= refElement.position().top) &&
+                    ((refElement.position().top + refElement.parent().height() * 0.75) <= scrollPos + window.innerHeight))
+            || ((refElement.position().top <= scrollPos) && (refElement.position().top + refElement.parent().height() <= scrollPos + window.innerHeight))) {
             // removing everything ensure you'll never have two menu items with active state, only one
             $('.navbar-nav a').removeClass('active');
             currItem.addClass('active');
@@ -16,9 +18,6 @@ var onScroll = function() {
             currItem.removeClass('active');
         }
     });
-
-
-
 };
 
 $(document).ready(function() {
