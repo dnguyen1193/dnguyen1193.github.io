@@ -24,7 +24,7 @@ var onScroll = function() {
 
 $(document).ready(function() {
     $(document).on('scroll', onScroll);
-    var navItems = $('.nav-item');
+    var navItems = $('.nav-item').add($('.navbar-brand'));
     navItems.on('click', function(e) {
         var target = $($(this).attr('href')).parent();
         if (target.length) {
