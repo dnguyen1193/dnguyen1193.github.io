@@ -26,7 +26,12 @@ $(document).ready(function() {
     $(document).on('scroll', onScroll);
     var navItems = $('.navbar-nav').find('a');
     navItems.on('click', function(e) {
-        var href = $(this).attr('href');
-        console.log(href);
+        var target = $($(this).attr('href')).parent();
+        if (target.length) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop:target.offset().top - $('.navbar').outerHeight()
+            });
+        }
     });
 });
