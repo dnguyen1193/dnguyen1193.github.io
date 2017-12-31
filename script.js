@@ -2,7 +2,7 @@ var onScroll = function() {
     var navbarHeight = $('.navbar').height();
     var scrollPosTop = $(document).scrollTop() + navbarHeight;
     var scrollPosMid = scrollPosTop + window.innerHeight * 0.5;
-    var navItems = $('.navbar-nav').find('a');
+    var navItems = $('.nav-item');
 
     navItems.each(function() {
         var currItem = $(this);
@@ -14,7 +14,7 @@ var onScroll = function() {
 
         if (scrollPosTop > navbarHeight && scrollPosTop <= refElementPosTop
             && refElementPosTop <= scrollPosMid) {
-            $('.navbar-nav a').removeClass('active');
+            $('.nav-item').removeClass('active');
             currItem.addClass('active');
         } else {
             currItem.removeClass('active');
@@ -24,7 +24,7 @@ var onScroll = function() {
 
 $(document).ready(function() {
     $(document).on('scroll', onScroll);
-    var navItems = $('.navbar-nav').find('a');
+    var navItems = $('.nav-item');
     navItems.on('click', function(e) {
         var target = $($(this).attr('href')).parent();
         if (target.length) {
