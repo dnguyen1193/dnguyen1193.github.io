@@ -28,7 +28,6 @@ $(document).ready(function() {
     navItems.on('click', function(e) {
         var target = $($(this).attr('href')).parent();
         if (target.length) {
-            e.preventDefault();
             $('html, body').animate({
                 scrollTop:target.offset().top - $('.navbar').outerHeight()
             });
