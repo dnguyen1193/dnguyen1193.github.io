@@ -26,6 +26,7 @@ $(document).ready(function() {
     $(document).on('scroll', onScroll);
     var navItems = $('.nav-item').add($('.navbar-brand'));
     navItems.on('click', function(e) {
+        e.preventDefault();
         var target = $($(this).attr('href')).parent();
         if (target.length) {
             $('html, body').animate({
@@ -33,4 +34,8 @@ $(document).ready(function() {
             });
         }
     });
+
+    if (window.location.hash) {
+        $('[href="' + location.hash + '"]').click();
+    }
 });
