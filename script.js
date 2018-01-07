@@ -32,6 +32,8 @@ $(document).ready(function() {
             $('html, body').animate({
                 scrollTop:target.offset().top - $('.navbar').outerHeight()
             });
+            target.attr('tabindex', -1);
+            target.focus();
         }
     });
 
