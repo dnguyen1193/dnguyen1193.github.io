@@ -11,7 +11,7 @@ var navItemClickCallback = function(e) {
 };
 
 $(document).ready(function() {
-    $('body').scrollspy();
+    $('body').scrollspy({ target: '.navbar' });
     var navItems = $('.nav-item').add($('.navbar-brand'));
     navItems.on('click', navItemClickCallback);
 
