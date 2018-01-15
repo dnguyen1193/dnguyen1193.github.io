@@ -1,4 +1,8 @@
+var collapseNavbar = function() {
+    $('button.navbar-toggler[aria-expanded=true]').click();
+}
 var navItemClickCallback = function(e) {
+    collapseNavbar();
     e.preventDefault();
     var target = $($(this).attr('href')).parent();
     if (target.length) {
