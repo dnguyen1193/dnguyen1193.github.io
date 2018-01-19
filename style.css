@@ -30,6 +30,11 @@
 	border-bottom: 2px solid rgba(0,0,0,.9);
 }
 
+hr {
+	width: 30%;
+	border-top: 3px dotted rgba(0,0,0,.5);
+}
+
 /* hidden span to ensure fixed navbar does not cover text,
    found from https://pixelflips.com/blog/anchor-links-with-a-fixed-header */
 .anchor {
